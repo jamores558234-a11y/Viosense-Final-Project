@@ -1,0 +1,26 @@
+| CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `full_name` varchar(100) DEFAULT NULL,
+  `plate_number` varchar(15) DEFAULT NULL,
+  `password_hash` varchar(255) DEFAULT NULL,
+  `role` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+ CREATE TABLE `violations` (
+  `violation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `driver_name` varchar(100) NOT NULL,
+  `license_plate` varchar(15) NOT NULL,
+  `violation_type` varchar(100) NOT NULL,
+  `date_recorded` date NOT NULL,
+  `fine_charged` decimal(10,2) NOT NULL,
+  `vehicle_model` varchar(50) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `payment_method` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`violation_id`)
+) 
+ CREATE TABLE `fine_dictionary` (
+  `violation_name` varchar(100) NOT NULL,
+  `fine_amount` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`violation_name`)
+) 
